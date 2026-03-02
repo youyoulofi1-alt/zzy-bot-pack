@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-دليل الإعداد والتثبيت
 Setup Guide - Djezzy Tool
 """
 
@@ -19,48 +18,48 @@ def print_header(title):
 
 def check_python_version():
     """Check if Python version is compatible"""
-    print_header("1️⃣  فحص إصدار Python")
+    print_header("1️⃣  Checking Python Version")
     
     version = sys.version_info
-    print(f"إصدار Python الحالي: {version.major}.{version.minor}.{version.micro}")
+    print(f"Current Python version: {version.major}.{version.minor}.{version.micro}")
     
     if version.major >= 3 and version.minor >= 8:
-        print("✅ الإصدار مناسب!")
+        print("✅ Version is compatible!")
         return True
     else:
-        print("❌ يجب استخدام Python 3.8 أو أحدث")
+        print("❌ Python 3.8 or later is required")
         return False
 
 
 def install_requirements():
     """Install required packages"""
-    print_header("2️⃣  تثبيت المكتبات المطلوبة")
+    print_header("2️⃣  Installing Required Libraries")
     
     requirements_file = "requirements.txt"
     
     if not os.path.exists(requirements_file):
-        print(f"❌ لم يتم العثور على {requirements_file}")
+        print(f"❌ {requirements_file} not found")
         return False
     
     try:
-        print("جاري تثبيت المكتبات...")
+        print("Installing libraries...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", requirements_file])
-        print("\n✅ تم تثبيت جميع المكتبات بنجاح!")
+        print("\n✅ All libraries installed successfully!")
         return True
     except subprocess.CalledProcessError as e:
-        print(f"\n❌ فشل التثبيت: {e}")
+        print(f"\n❌ Installation failed: {e}")
         return False
 
 
 def check_files():
     """Check if all required files exist"""
-    print_header("3️⃣  فحص الملفات المطلوبة")
+    print_header("3️⃣  Checking Required Files")
     
     required_files = {
-        "djezzy_utils.py": "وحدة الأداة الأساسية",
-        "djezzy_bot.py": "بوت Telegram",
-        "cli_runner.py": "واجهة سطر الأوامر",
-        "requirements.txt": "قائمة المكتبات",
+        "djezzy_utils.py": "Core utility module",
+        "djezzy_bot.py": "Telegram bot",
+        "cli_runner.py": "Command line interface",
+        "requirements.txt": "Library list",
     }
     
     all_exist = True
@@ -68,7 +67,7 @@ def check_files():
         if os.path.exists(filename):
             print(f"✅ {filename:<20} - {description}")
         else:
-            print(f"❌ {filename:<20} - {description} (مفقود)")
+            print(f"❌ {filename:<20} - {description} (Missing)")
             all_exist = False
     
     return all_exist
@@ -76,49 +75,49 @@ def check_files():
 
 def setup_environment():
     """Setup environment"""
-    print_header("4️⃣  إعداد البيئة")
+    print_header("4️⃣  Setting up Environment")
     
     # Create logs directory if needed
     log_dir = os.path.dirname("djezzy_tool.log")
     if log_dir and not os.path.exists(log_dir):
         os.makedirs(log_dir)
-        print(f"✅ تم إنشاء مجلد السجلات")
+        print(f"✅ Logs directory created")
     
     # Check permissions
     if not os.access(".", os.W_OK):
-        print("❌ لا توجد صلاحيات الكتابة في المجلد الحالي")
+        print("❌ No write permissions in the current directory")
         return False
     
-    print("✅ البيئة جاهزة للعمل")
+    print("✅ Environment is ready")
     return True
 
 
 def show_usage_guide():
     """Show usage guide"""
-    print_header("📖 دليل الاستخدام")
+    print_header("📖 Usage Guide")
     
     print("""
-1️⃣  تشغيل بوت Telegram:
+1️⃣  Run the Telegram Bot:
     python djezzy_bot.py
     
-    (تأكد من وضع Telegram Bot Token قبل التشغيل)
+    (Make sure to set the Telegram Bot Token before running)
 
-2️⃣  تشغيل واجهة سطر الأوامر (CLI):
+2️⃣  Run the Command Line Interface (CLI):
     python cli_runner.py
     
-    (واجهة تفاعلية بسيطة بدون الحاجة إلى Telegram)
+    (Interactive interface without needing Telegram)
 
-3️⃣  استخدام الوحدة في مشروع آخر:
+3️⃣  Use the module in another project:
     
     from djezzy_utils import *
     
-    # طلب OTP
+    # Request OTP
     response = request_otp("213770123456")
     
-    # تسجيل الدخول
+    # Login
     token = login_with_otp("213770123456", "123456")
     
-    # تسجيل رقم
+    # Register number
     success, message, data = register_with_number(
         "213770123456", 
         "123456"
@@ -128,33 +127,33 @@ def show_usage_guide():
 
 def show_telegram_setup():
     """Show Telegram bot setup instructions"""
-    print_header("🤖 إعداد بوت Telegram")
+    print_header("🤖 Telegram Bot Setup")
     
     print("""
-خطوات:
+Steps:
 
-1. افتح Telegram وابحث عن @BotFather
-2. أرسل /newbot
-3. اتبع التعليمات:
-   - اختر اسم للبوت (مثال: Djezzy Bot)
-   - اختر username (مثال: djezzy_algo_bot)
-4. سيرسل لك Telegram رسالة تحتوي على Token
-5. انسخ Token واحفظه
-6. افتح dlezzy_bot.py وضع Token في المكان المحدد:
+1. Open Telegram and search for @BotFather
+2. Send /newbot
+3. Follow the instructions:
+   - Choose a bot name (e.g., Djezzy Bot)
+   - Choose a username (e.g., djezzy_algo_bot)
+4. Telegram will send you a message with your Token
+5. Copy the Token and save it
+6. Open djezzy_bot.py and place the Token in the designated location:
    
    TOKEN = "YOUR_ACTUAL_BOT_TOKEN"
 
-7. شغّل:
+7. Run:
    python djezzy_bot.py
 
-8. ابدأ محادثة مع البوت على Telegram
-   أرسل /start
+8. Start a conversation with the bot on Telegram
+   Send /start
 """)
 
 
 def create_config_template():
     """Create config file template"""
-    print_header("⚙️  إنشاء ملف الإعدادات (اختياري)")
+    print_header("⚙️  Creating Config File (Optional)")
     
     config_content = """{
     "telegram": {
@@ -177,31 +176,31 @@ def create_config_template():
     if not os.path.exists(config_file):
         with open(config_file, 'w', encoding='utf-8') as f:
             f.write(config_content)
-        print(f"✅ تم إنشاء {config_file}")
-        print("   يمكن تعديل الإعدادات في هذا الملف")
+        print(f"✅ {config_file} created")
+        print("   Settings can be modified in this file")
     else:
-        print(f"ℹ️  الملف {config_file} موجود بالفعل")
+        print(f"ℹ️  {config_file} already exists")
 
 
 def final_checklist():
     """Show final checklist"""
-    print_header("✅ قائمة التحقق النهائية")
+    print_header("✅ Final Checklist")
     
     checklist = [
-        ("Python 3.8+", "إصدار Python"),
-        ("python-telegram-bot", "مكتبة Telegram"),
-        ("requests", "مكتبة requests"),
-        ("djezzy_utils.py", "الملف الأساسي"),
-        ("djezzy_bot.py", "ملف البوت"),
-        ("cli_runner.py", "واجهة سطر الأوامر"),
+        ("Python 3.8+", "Python Version"),
+        ("python-telegram-bot", "Telegram Library"),
+        ("requests", "Requests Library"),
+        ("djezzy_utils.py", "Core File"),
+        ("djezzy_bot.py", "Bot File"),
+        ("cli_runner.py", "Command Line Interface"),
     ]
     
-    print("تحقق من التالي:")
+    print("Check the following:")
     for item, desc in checklist:
         print(f"  ☐ {item:<30} - {desc}")
     
     print("\n" + "="*60)
-    print("🎉 الآن أنت جاهز للبدء!")
+    print("🎉 You are ready to start!")
     print("="*60)
 
 
@@ -209,50 +208,50 @@ def main():
     """Main setup process"""
     print("\n" + "█"*60)
     print("█" + " "*58 + "█")
-    print("█" + "  دليل الإعداد - أداة اتصالات الجزائر".center(58) + "█")
+    print("█" + "  Setup Guide - Djezzy Tool".center(58) + "█")
     print("█" + "  Djezzy Tool - Setup Guide".center(58) + "█")
     print("█" + " "*58 + "█")
     print("█"*60)
     
     # Run checks
     if not check_python_version():
-        print("\n❌ وقف الإعداد: إصدار Python غير مناسب")
+        print("\n❌ Setup stopped: Incompatible Python version")
         return False
     
     if not check_files():
-        print("\n⚠️  تحذير: بعض الملفات مفقودة")
+        print("\n⚠️  Warning: Some files are missing")
     
-    if input("\n🔧 تثبيت المتطلبات؟ (y/n): ").lower() == 'y':
+    if input("\n🔧 Install requirements? (y/n): ").lower() == 'y':
         if not install_requirements():
-            print("\n❌ فشل التثبيت")
+            print("\n❌ Installation failed")
             return False
     
     if not setup_environment():
-        print("\n❌ فشل الإعداد")
+        print("\n❌ Setup failed")
         return False
     
     show_usage_guide()
     
-    if input("\n📖 عرض دليل إعداد Telegram Bot؟ (y/n): ").lower() == 'y':
+    if input("\n📖 Show Telegram Bot Setup Guide? (y/n): ").lower() == 'y':
         show_telegram_setup()
     
-    if input("\n⚙️  إنشاء ملف الإعدادات؟ (y/n): ").lower() == 'y':
+    if input("\n⚙️  Create Config File? (y/n): ").lower() == 'y':
         create_config_template()
     
     final_checklist()
     
     print("\n" + "="*60)
-    print("\n💡 النصائح:")
-    print("  • احفظ Token البوت في مكان آمن")
-    print("  • لا تشارك Token مع أحد")
-    print("  • استخدم متغيرات البيئة للـ Token في الإنتاج")
-    print("  • اقرأ README.md للمزيد من المعلومات")
-    print("  • تحقق من السجلات 'djezzy_tool.log' عند الأخطاء")
+    print("\n💡 Tips:")
+    print("  • Keep your Bot Token secure")
+    print("  • Do not share your Bot Token with anyone")
+    print("  • Use environment variables for the Token in production")
+    print("  • Read README.md for more information")
+    print("  • Check 'djezzy_tool.log' logs for errors")
     
     print("\n" + "="*60)
-    print("\n👋 البعدء:")
-    print("  • تشغيل البوت: python djezzy_bot.py")
-    print("  • واجهة سطر الأوامر: python cli_runner.py")
+    print("\n👋 Goodbye:")
+    print("  • Run the bot: python djezzy_bot.py")
+    print("  • Command line interface: python cli_runner.py")
     
     print("\n" + "="*60 + "\n")
     
@@ -264,10 +263,10 @@ if __name__ == "__main__":
         success = main()
         sys.exit(0 if success else 1)
     except KeyboardInterrupt:
-        print("\n\n❌ تم إيقاف الإعداد")
+        print("\n\n❌ Setup interrupted")
         sys.exit(1)
     except Exception as e:
-        print(f"\n❌ خطأ: {e}")
+        print(f"\n❌ Error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

@@ -1,99 +1,99 @@
 #!/usr/bin/env python3
 """
-📋 فهرس المشروع - Index
+📋 Project Index
 ====================================
-جميع ملفات المشروع والتوثيق
+All project files and documentation
 ====================================
 """
 
 PROJECT_FILES = {
-    "🐍 ملفات Python الرئيسية": {
+    "🐍 Core Python Files": {
         "djezzy_utils.py": {
-            "النوع": "وحدة مستقلة",
-            "الوصف": "جميع وظائف التسجيل والمكافآت",
-            "الاستخدام": "from djezzy_utils import register_with_number",
-            "الحجم": "200+ سطر"
+            "type": "Standalone Module",
+            "description": "All registration and reward functions",
+            "usage": "from djezzy_utils import register_with_number",
+            "size": "200+ lines"
         },
         "djezzy_bot.py": {
-            "النوع": "بوت Telegram",
-            "الوصف": "بوت تيليغرام احترافي كامل",
-            "الاستخدام": "python djezzy_bot.py",
-            "الحجم": "400+ سطر"
+            "type": "Telegram Bot",
+            "description": "Full professional Telegram bot",
+            "usage": "python djezzy_bot.py",
+            "size": "400+ lines"
         },
         "cli_runner.py": {
-            "النوع": "واجهة سطر الأوامر",
-            "الوصف": "واجهة تفاعلية بسيطة",
-            "الاستخدام": "python cli_runner.py",
-            "الحجم": "300+ سطر"
+            "type": "Command Line Interface",
+            "description": "Simple interactive CLI",
+            "usage": "python cli_runner.py",
+            "size": "300+ lines"
         },
         "setup.py": {
-            "النوع": "برنامج الإعداد",
-            "الوصف": "برنامج الإعداد والتثبيت",
-            "الاستخدام": "python setup.py",
-            "الحجم": "400+ سطر"
+            "type": "Setup Program",
+            "description": "Installation and setup program",
+            "usage": "python setup.py",
+            "size": "400+ lines"
         }
     },
     
-    "📁 ملفات الإعدادات والمتطلبات": {
+    "📁 Configuration and Requirements Files": {
         "requirements.txt": {
-            "النوع": "تابعيات",
-            "الوصف": "قائمة بـ Python packages المطلوبة",
-            "المحتوى": [
+            "type": "Dependencies",
+            "description": "List of required Python packages",
+            "content": [
                 "python-telegram-bot==20.3",
                 "requests==2.31.0"
             ]
         },
         ".env.example": {
-            "النوع": "متغيرات البيئة",
-            "الوصف": "مثال لملف الإعدادات",
-            "الاستخدام": "انسخ إلى .env وعدّل",
-            "الأهمية": "مهم جداً للأمان"
+            "type": "Environment Variables",
+            "description": "Example configuration file",
+            "usage": "Copy to .env and modify",
+            "importance": "Very important for security"
         }
     },
     
-    "📚 ملفات التوثيق": {
+    "📚 Documentation Files": {
         "README.md": {
-            "اللغة": "عربي",
-            "الحجم": "1000+ سطر",
-            "المحتوى": [
-                "دليل شامل",
-                "المميزات",
-                "التثبيت",
-                "الاستخدام",
-                "الأوامر",
-                "استكشاف الأخطاء"
+            "language": "Arabic",
+            "size": "1000+ lines",
+            "content": [
+                "Comprehensive Guide",
+                "Features",
+                "Installation",
+                "Usage",
+                "Commands",
+                "Troubleshooting"
             ]
         },
         "QUICKSTART.md": {
-            "اللغة": "عربي",
-            "الحجم": "500+ سطر",
-            "المحتوى": [
-                "بدء سريع في 5 دقائق",
-                "خطوات التثبيت",
-                "طرق الاستخدام",
-                "أسئلة شائعة",
-                "الأمان"
+            "language": "Arabic",
+            "size": "500+ lines",
+            "content": [
+                "Quick Start in 5 Minutes",
+                "Installation Steps",
+                "Usage Methods",
+                "FAQ",
+                "Security"
             ]
         },
         "PROJECT_SUMMARY.md": {
-            "اللغة": "عربي",
-            "الحجم": "600+ سطر",
-            "المحتوى": [
-                "ملخص المشروع",
-                "ما تم إنجازه",
-                "المقارنة",
-                "دليل التطوير",
-                "المستقبل"
+            "language": "Arabic",
+            "size": "600+ lines",
+            "content": [
+                "Project Summary",
+                "What Was Done",
+                "Comparison",
+                "Development Guide",
+                "Future Plans"
             ]
         }
     },
     
-    "📊 ملفات البيانات (تُنشأ تلقائياً)": {
+    "📊 Data Files (Generated Automatically)": {
         "registered_numbers.json": {
-            "النوع": "سجل بيانات",
-            "المحتوى": "قائمة الأرقام المسجلة بنجاح",
-            "الصيغة": "JSON",
-            "مثال": {
+            "type": "Data Log",
+            "content": "List of successfully registered numbers",
+            "format": "JSON",
+            "example": {
                 "sender": "213770123456",
                 "target": "213779999999",
                 "timestamp": "2024-03-01 15:30:45",
@@ -101,10 +101,10 @@ PROJECT_FILES = {
             }
         },
         "djezzy_tool.log": {
-            "النوع": "سجل العمليات",
-            "المحتوى": "جميع العمليات والأخطاء",
-            "التحديث": "في الوقت الفعلي",
-            "الفائدة": "للتتبع والتصحيح"
+            "type": "Operation Log",
+            "content": "All operations and errors",
+            "update": "Real-time",
+            "usefulness": "For tracking and debugging"
         }
     }
 }
@@ -112,33 +112,33 @@ PROJECT_FILES = {
 def print_header():
     """Print header"""
     print("\n" + "╔" + "═"*68 + "╗")
-    print("║" + " " * 20 + "📋 فهرس المشروع المستقل  📋" + " " * 16 + "║")
+    print("║" + " " * 20 + "📋 Djezzy Standalone Project Index 📋" + " " * 16 + "║")
     print("║" + " " * 15 + "Djezzy Standalone Bot Project Index" + " " * 18 + "║")
     print("╚" + "═"*68 + "╝\n")
 
 
 def print_file_tree():
     """Print file tree"""
-    print("📁 بنية المشروع:")
+    print("📁 Project Structure:")
     print("""
 djezzy_bot/
-├── 🐍 الملفات الرئيسية
-│   ├── djezzy_utils.py      ⭐ الوحدة الأساسية (مستقلة)
-│   ├── djezzy_bot.py         🤖 بوت Telegram
-│   ├── cli_runner.py         💻 واجهة سطر الأوامر
-│   └── setup.py              ⚙️  برنامج الإعداد
+├── 🐍 Core Files
+│   ├── djezzy_utils.py      ⭐ Core Module (Standalone)
+│   ├── djezzy_bot.py         🤖 Telegram Bot
+│   ├── cli_runner.py         💻 Command Line Interface
+│   └── setup.py              ⚙️  Setup Program
 │
-├── 📋 الإعدادات
-│   ├── requirements.txt       📦 المكتبات
-│   └── .env.example          🔐 متغيرات البيئة
+├── 📋 Configuration
+│   ├── requirements.txt       📦 Libraries
+│   └── .env.example          🔐 Environment Variables
 │
-├── 📚 التوثيق
-│   ├── README.md             📖 الدليل الشامل
-│   ├── QUICKSTART.md         ⚡ بدء سريع
-│   ├── PROJECT_SUMMARY.md    📋 ملخص المشروع
-│   └── INDEX.md              📑 هذا الملف
+├── 📚 Documentation
+│   ├── README.md             📖 Comprehensive Guide
+│   ├── QUICKSTART.md         ⚡ Quick Start
+│   ├── PROJECT_SUMMARY.md    📋 Project Summary
+│   └── INDEX.md              📑 This File
 │
-└── 📊 البيانات (تُنشأ تلقائياً)
+└── 📊 Data (Automatically Generated)
     ├── registered_numbers.json
     └── djezzy_tool.log
 """)
@@ -147,22 +147,22 @@ djezzy_bot/
 def print_quick_start():
     """Print quick start"""
     print("\n" + "="*70)
-    print("⚡ بدء سريع")
+    print("⚡ Quick Start")
     print("="*70 + "\n")
     
-    print("1️⃣  تثبيت المكتبات:")
+    print("1️⃣  Install libraries:")
     print("    pip install -r requirements.txt\n")
     
-    print("2️⃣  اختر طريقة الاستخدام:\n")
-    print("    ✅ واجهة سطر الأوامر (الأسهل):")
+    print("2️⃣  Choose a usage method:\n")
+    print("    ✅ Command Line Interface (Easiest):")
     print("       python cli_runner.py\n")
     
-    print("    ✅ بوت Telegram (الأفضل):")
-    print("       1. احصل على Token من @BotFather")
-    print("       2. ضعه في djezzy_bot.py")
+    print("    ✅ Telegram Bot (Best):")
+    print("       1. Get Token from @BotFather")
+    print("       2. Place it in djezzy_bot.py")
     print("       3. python djezzy_bot.py\n")
     
-    print("    ✅ استخدام الكود مباشرة:")
+    print("    ✅ Use the code directly:")
     print("       from djezzy_utils import register_with_number")
     print("       result = register_with_number('213770123456', 'OTP')\n")
 
@@ -170,19 +170,19 @@ def print_quick_start():
 def print_file_descriptions():
     """Print detailed file descriptions"""
     print("\n" + "="*70)
-    print("📄 وصف الملفات")
+    print("📄 File Descriptions")
     print("="*70 + "\n")
     
     files_info = [
-        ("djezzy_utils.py", "الوحدة الأساسية المستقلة", "⭐⭐⭐⭐⭐"),
-        ("djezzy_bot.py", "بوت Telegram احترافي", "⭐⭐⭐⭐"),
-        ("cli_runner.py", "واجهة سطر الأوامر", "⭐⭐⭐"),
-        ("setup.py", "برنامج الإعداد التفاعلي", "⭐⭐⭐"),
-        ("requirements.txt", "قائمة المكتبات المطلوبة", "⭐⭐"),
-        (".env.example", "مثال لملف الإعدادات", "⭐⭐"),
-        ("README.md", "دليل شامل (عربي)", "⭐⭐⭐⭐"),
-        ("QUICKSTART.md", "دليل بدء سريع (عربي)", "⭐⭐⭐⭐"),
-        ("PROJECT_SUMMARY.md", "ملخص المشروع (عربي)", "⭐⭐⭐"),
+        ("djezzy_utils.py", "Core Standalone Module", "⭐⭐⭐⭐⭐"),
+        ("djezzy_bot.py", "Professional Telegram Bot", "⭐⭐⭐⭐"),
+        ("cli_runner.py", "Command Line Interface", "⭐⭐⭐"),
+        ("setup.py", "Interactive Setup Program", "⭐⭐⭐"),
+        ("requirements.txt", "Required Libraries List", "⭐⭐"),
+        (".env.example", "Example Configuration File", "⭐⭐"),
+        ("README.md", "Comprehensive Guide (Arabic)", "⭐⭐⭐⭐"),
+        ("QUICKSTART.md", "Quick Start Guide (Arabic)", "⭐⭐⭐⭐"),
+        ("PROJECT_SUMMARY.md", "Project Summary (Arabic)", "⭐⭐⭐"),
     ]
     
     for filename, description, importance in files_info:
@@ -193,18 +193,18 @@ def print_file_descriptions():
 def print_features():
     """Print features"""
     print("\n" + "="*70)
-    print("✨ المميزات")
+    print("✨ Features")
     print("="*70 + "\n")
     
     features = [
-        ("🔓 مستقل تماماً", "لا يعتمد على Flutter أو أي تطبيق آخر"),
-        ("🧩 قابل لإعادة الاستخدام", "استخدم الوحدة في أي مشروع"),
-        ("🤖 بوت Telegram", "واجهة احترافية وسهلة"),
-        ("💻 واجهة سطر أوامر", "بدون الحاجة إلى Telegram"),
-        ("📊 إحصائيات", "تتبع جميع التسجيلات"),
-        ("📝 توثيق شامل", "دليل عربي كامل"),
-        ("🔒 آمن", "لا يحفظ كلمات المرور"),
-        ("📈 جاهز للنمو", "سهل التطوير والتوسع"),
+        ("🔓 Fully Standalone", "Does not rely on Flutter or any other app"),
+        ("🧩 Reusable", "Use the module in any project"),
+        ("🤖 Telegram Bot", "Professional and easy interface"),
+        ("💻 Command Line Interface", "No need for Telegram"),
+        ("📊 Statistics", "Track all registrations"),
+        ("📝 Comprehensive Documentation", "Full Arabic guide"),
+        ("🔒 Secure", "Does not store passwords"),
+        ("📈 Ready for Growth", "Easy to develop and expand"),
     ]
     
     for feature, description in features:
@@ -215,26 +215,26 @@ def print_features():
 def print_usage_examples():
     """Print usage examples"""
     print("\n" + "="*70)
-    print("📖 أمثلة الاستخدام")
+    print("📖 Usage Examples")
     print("="*70 + "\n")
     
-    print("1️⃣  استخدام الوحدة:")
+    print("1️⃣  Using the module:")
     print("""
     from djezzy_utils import register_with_number, request_otp
     
-    # طلب OTP
+    # Request OTP
     response = request_otp("213770123456")
     
-    # تسجيل
+    # Register
     success, msg, data = register_with_number("213770123456", "123456")
     if success:
-        print(f"تم التسجيل: {data}")
+        print(f"Registered: {data}")
     """)
     
-    print("\n2️⃣  تشغيل البوت:")
+    print("\n2️⃣  Run the bot:")
     print("    python djezzy_bot.py")
     
-    print("\n3️⃣  واجهة سطر الأوامر:")
+    print("\n3️⃣  Command Line Interface:")
     print("    python cli_runner.py")
     print()
 
@@ -242,15 +242,15 @@ def print_usage_examples():
 def print_next_steps():
     """Print next steps"""
     print("\n" + "="*70)
-    print("🚀 الخطوات التالية")
+    print("🚀 Next Steps")
     print("="*70 + "\n")
     
     steps = [
-        ("1", "اقرأ README.md للفهم الشامل"),
-        ("2", "اتبع QUICKSTART.md للبدء السريع"),
-        ("3", "شغّل setup.py للإعداد التلقائي"),
-        ("4", "اختر طريقة الاستخدام المفضلة"),
-        ("5", "ابدأ الاستخدام الفوري"),
+        ("1", "Read README.md for comprehensive understanding"),
+        ("2", "Follow QUICKSTART.md for quick setup"),
+        ("3", "Run setup.py for automatic setup"),
+        ("4", "Choose your preferred usage method"),
+        ("5", "Start using immediately"),
     ]
     
     for num, step in steps:
@@ -261,21 +261,21 @@ def print_next_steps():
 def print_support():
     """Print support info"""
     print("\n" + "="*70)
-    print("💬 الدعم والمساعدة")
+    print("💬 Support and Help")
     print("="*70 + "\n")
     
-    print("  📖 اقرأ التوثيق:")
-    print("    • README.md - دليل شامل")
-    print("    • QUICKSTART.md - بدء سريع")
-    print("    • PROJECT_SUMMARY.md - ملخص المشروع\n")
+    print("  📖 Read Documentation:")
+    print("    • README.md - Comprehensive Guide")
+    print("    • QUICKSTART.md - Quick Start")
+    print("    • PROJECT_SUMMARY.md - Project Summary\n")
     
-    print("  🔍 تتبع الأخطاء:")
+    print("  🔍 Track errors:")
     print("    • tail -f djezzy_tool.log")
     print("    • grep ERROR djezzy_tool.log\n")
     
-    print("  ⚙️  الإعدادات:")
-    print("    • استخدم .env لـ Token بأمان")
-    print("    • عدّل الإعدادات حسب احتياجاتك\n")
+    print("  ⚙️  Settings:")
+    print("    • Use .env for safe Token management")
+    print("    • Modify settings as needed\n")
 
 
 def main():
@@ -290,13 +290,13 @@ def main():
     print_support()
     
     print("="*70)
-    print("✅ المشروع جاهز للاستخدام!")
+    print("✅ Project is ready to use!")
     print("="*70 + "\n")
     
-    print("💡 نصيحة: ابدأ بـ:")
-    print("  python setup.py        # للإعداد")
+    print("💡 Tip: Start with:")
+    print("  python setup.py        # For setup")
     print("  OR")
-    print("  python cli_runner.py    # للاستخدام المباشر")
+    print("  python cli_runner.py    # For direct usage")
     print()
 
 
