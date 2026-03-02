@@ -1,25 +1,30 @@
 #!/bin/bash
 set -e
-# إنشاء البيئة الافتراضية إذا لم تكن موجودة
+
+# Create virtual environment if it does not exist
 if [ ! -d "venv" ]; then
-    echo "⚡ إنشاء البيئة الافتراضية..."
+    echo "⚡ Creating virtual environment..."
     python3 -m venv venv
 fi
-# تفعيل البيئة
-echo "🔄 تفعيل البيئة الافتراضية..."
+
+# Activate virtual environment
+echo "🔄 Activating virtual environment..."
 source venv/bin/activate
-# تثبيت المكتبات
-echo "📦 تثبيت المكتبات..."
+
+# Install libraries
+echo "📦 Installing dependencies..."
 pip install --upgrade pip
 pip install -r requirements.txt
-# التحقق من المتغيرات
+
+# Check required environment variables
 if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
-    echo "❌ يجب تعيين TELEGRAM_BOT_TOKEN و TELEGRAM_CHAT_ID"
-    echo "مثال:"
-    echo "export TELEGRAM_BOT_TOKEN='توكنك'"
-    echo "export TELEGRAM_CHAT_ID='ايديك'"
+    echo "❌ TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set"
+    echo "Example:"
+    echo "export TELEGRAM_BOT_TOKEN='your_token'"
+    echo "export TELEGRAM_CHAT_ID='your_chat_id'"
     exit 1
 fi
-# تشغيل البوت
-echo "🚀 تشغيل البوت..."
+
+# Start the bot
+echo "🚀 Starting the bot..."
 ./run.sh

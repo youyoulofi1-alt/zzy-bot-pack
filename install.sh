@@ -2,20 +2,20 @@
 
 # Termux installation helper for Djezzy Bot
 # Usage example:
-#   git clone https://github.com/zalsofoy-dev/zalsofoy-code.git
-#   cd zalsofoy-code
+#   git clone https://github.com/youyoulofi1-alt/zzy-bot-pack.git
+#   cd zzy-bot-pack
 #   chmod +x install.sh
 #   BOT_TOKEN="..." CHAT_ID="123456" ./install.sh
 
 set -e
 
-# ensure we are running inside termux
+# ensure we are running inside Termux
 if [[ -z "$PREFIX" || ! -d "$PREFIX" ]]; then
-    echo "⚠️  يبدو أنك لا تعمل داخل Termux. افعل ذلك ثم أعد تشغيل السكربت."
+    echo "⚠️  It looks like you are not running inside Termux. Please open Termux and run the script again."
     exit 1
 fi
 
-echo "📦 تحديث الحزم"
+echo "📦 Updating packages..."
 pkg update -y && pkg upgrade -y
 
 # install python and git if needed
@@ -23,11 +23,11 @@ pkg install -y python git
 
 # create virtual environment
 if [ ! -d "venv" ]; then
-    echo "🐍 إنشاء البيئة الوهمية (venv) ..."
+    echo "🐍 Creating virtual environment (venv)..."
     python3 -m venv venv
 fi
 
-# activate
+# activate virtual environment
 source venv/bin/activate
 
 # install requirements
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 # write .env file from provided variables
 if [ -z "$BOT_TOKEN" ]; then
-    echo "❌ متغير BOT_TOKEN غير مضبوط. تحديده قبل تشغيل السكربت مثال: BOT_TOKEN=..."
+    echo "❌ BOT_TOKEN variable is not set. Define it before running the script, for example: BOT_TOKEN=..."
     exit 1
 fi
 
@@ -45,11 +45,11 @@ TELEGRAM_BOT_TOKEN=$BOT_TOKEN
 ADMIN_ID=${CHAT_ID:-}
 EOF
 
-echo "✅ ملف .env تم إنشاؤه."
+echo "✅ .env file has been created."
 
 # create data directories just in case
 mkdir -p data logs config
 
 # finally start
-echo "🚀 بدء البوت..." 
+echo "🚀 Starting the bot..."
 python3 run.sh

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Djezzy Telegram Bot
-بوت تيليغرام لأداة اتصالات الجزائر
+بوت تيليغرام لأداة جيزي الجزائر
 """
 
 import logging
@@ -65,7 +65,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     reply_markup = InlineKeyboardMarkup(keyboard)
     
     await update.message.reply_text(
-        "👋 مرحباً بك في بوت اتصالات الجزائر\n\n"
+        "👋 مرحباً بك في بوت جيزي الجزائر\n\n"
         "اختر العملية المطلوبة:",
         reply_markup=reply_markup
     )
@@ -79,8 +79,8 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
     if query.data == 'register':
         await query.edit_message_text(
-            "📱 أدخل رقم اتصالات الجزائر الخاص بك\n"
-            "مثال: 0770123456 أو 213770123456"
+            "📱 أدخل رقم جيزي الجزائر الخاص بك\n"
+            "مثال: 0770123456"
         )
         return PHONE_NUMBER
 
@@ -117,7 +117,7 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     elif query.data == 'info':
         await query.edit_message_text(
             "ℹ️ معلومات البوت:\n\n"
-            "هذا البوت يساعدك على تسجيل 1 جيغا مجاني من اتصالات الجزائر\n\n"
+            "هذا البوت يساعدك على تسجيل 1 جيغا مجاني من جيزي الجزائر\n\n"
             "الخطوات:\n"
             "1️⃣ أدخل رقم هاتفك\n"
             "2️⃣ سيتم إرسال كود التحقق\n"
